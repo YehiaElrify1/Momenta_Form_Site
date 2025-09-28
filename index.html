@@ -443,13 +443,34 @@
           headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
           body,
         });
-        if (res.type === 'opaque') return { ok: true };
-        const data = await res.json().catch(() => ({ ok: true }));
-        return data;
+    
+        if (res.type === 'opaque') {
+          return { ok: true, note: 'opaque-response' };
+        }
+    
+        if (res.ok) {
+          const ct = res.headers.get('Content-Type') || '';
+          if (ct.includes('application/json')) {
+            const data = await res.json().catch(() => ({ ok: true, note: 'json-parse-fallback' }));
+            if (typeof data.ok === 'string') data.ok = data.ok === 'true';
+            return data.ok ? data : { ok: true, note: 'ok-true-by-2xx' };
+          } else {
+            return { ok: true, note: 'non-json-2xx' };
+          }
+        }
+    
+        let errDetail = '';
+        try {
+          const t = await res.text();
+          errDetail = t?.slice(0, 200);
+        } catch (_) {}
+        return { ok: false, error: `http-${res.status} ${res.statusText} ${errDetail}`.trim() };
+    
       } catch (err) {
-        return { ok: false, error: err.message };
+        return { ok: false, error: `network-error: ${err.message}` };
       }
     }
+
 
     // إظهار/إخفاء خانة "أخرى" حسب الاختيار
     const interestSel = document.getElementById('interest');
