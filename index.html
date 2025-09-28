@@ -91,14 +91,15 @@
 
     /* Section */
     .section { 
-      position: relative;          /* علشان الخلفية pseudo-element تتحكم جوه */
-      z-index: 0;                  /* يخلي ::before يفضل ورا المحتوى بس */
+      position: relative;
+      z-index: 0;
       max-width: 1100px; 
-      margin: 0 auto; 
-      padding: 28px 18px 38px; 
+      margin: 0 auto 40px;   /* 👈 هنا ضفت 40px تحت كل سكشن */
+      padding: 28px 18px 38px;
       border-radius: var(--radius);
-      overflow: hidden;            /* يخلي الخلفية تتقصّ مع الانحناءات */
+      overflow: hidden;
     }
+
     
     .section::before {
       content: "";
