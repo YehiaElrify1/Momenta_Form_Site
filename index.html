@@ -572,12 +572,17 @@
 
       const result = await submitData(payload);
 
+      console.log('Submit result:', result); // مفيد للتشخيص
+      
       if (result && result.ok) {
         form.reset();
         toggleOther();
         showToast('تم استلام طلبك بنجاح! سنوافيك بالتفاصيل قريبًا ✅');
       } else {
-        showToast('تعذر الإرسال حالياً. حاول مرة أخرى لاحقًا.', true);
+        const msg = (result && result.error)
+          ? `تعذّر الإرسال: ${result.error}`
+          : 'تعذّر الإرسال حالياً. حاول مرة أخرى لاحقًا.';
+        showToast(msg, true);
       }
       
       submitBtn.disabled = false;
