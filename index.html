@@ -291,6 +291,7 @@
               <option value="Content Writing">Creative Media — Content Writing</option>
               <option value="other">أخرى</option>
             </select>
+            <div class="error" id="interestError">فضلاً اختر فريق محدد.</div>
             <div class="hint">اختيارك يساعدنا نوصل فريق الكرياتيف بيك أسرع.</div>
 
             <!-- يظهر فقط لو اختار "أخرى" -->
@@ -513,6 +514,16 @@
       if (!/^\d{14}$/.test(nationalId.value)) { showError('nidError', true); setInvalid(nationalId, true); valid = false; }
       if (!/^01[0-2,5]\d{8}$/.test(phone.value)) { showError('phoneError', true); setInvalid(phone, true); valid = false; }
 
+      // التحقق من اختيار الفريق
+      if (!interestSel.value || interestSel.value === '') {
+        showError('interestError', true);
+        interestSel.setAttribute('aria-invalid', 'true'); // يخلي البوردر أحمر
+        valid = false;
+      } else {
+        showError('interestError', false);
+        interestSel.setAttribute('aria-invalid', 'false');
+      }
+
       // تحقق من خانة "أخرى"
       const isOther = interestSel && interestSel.value === 'other';
       if (isOther && !otherInput.value.trim()) {
@@ -547,7 +558,7 @@
       } else {
         showToast('تعذر الإرسال حالياً. حاول مرة أخرى لاحقًا.', true);
       }
-
+      
       submitBtn.disabled = false;
       btnText.textContent = 'إرسال الطلب';
     });
