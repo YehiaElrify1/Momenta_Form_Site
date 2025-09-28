@@ -90,7 +90,10 @@
     @keyframes floatGlow { from { transform: translateY(-8px);} to { transform: translateY(8px);} }
 
     /* Section */
-    .section { max-width: 1100px; margin: 0 auto; padding: 28px 18px 48px; }
+
+    .section { position: relative; padding: 28px 18px 38px; }
+    .section::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: min(1100px, calc(100% - 36px)); transform: translateX(-50%); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); z-index: -1; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+    
     .section h2 { margin: 0 0 18px; font-size: 22px; }
 
     /* Feature cards */
@@ -203,7 +206,7 @@
     <!-- Creative Media Team Section -->
     <section class="section" id="creative">
       <span class="badge" data-aos="zoom-in">فرصة تطوّع</span>
-      <h1 class="headline" data-aos="fade-up" data-aos-delay="60">انضم لفريق الـ<br>Creative Media Team</h1>
+      <h1 class="headline" data-aos="fade-up" data-aos-delay="60">انضم الـى<br>Creative Media Team</h1>
       <button class="cta" id="ctaCreative" data-aos="fade-up" data-aos-delay="140">📝 قدّم لفريق Creative Media Team</button>
       <p class="sub" data-aos="fade-up" data-aos-delay="60">
         <br>
