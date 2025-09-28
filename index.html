@@ -1,13 +1,15 @@
 <!doctype html>
-
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>انضم لأسرة Momenta — HIET KFS</title>
-  <meta name="description" content="نموذج تسجيل أعضاء جدد لأسرة Momenta بالمعهد العالي للهندسة والتكنولوجيا بكفر الشيخ" />  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="نموذج تسجيل أعضاء جدد لأسرة Momenta بالمعهد العالي للهندسة والتكنولوجيا بكفر الشيخ" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <!-- AOS (on-scroll animations) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />  <style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
     :root {
       --bg: #0b1020;
       --card: #111832;
@@ -162,7 +164,26 @@
 
     /* small util */
     .badge { display:inline-block; background: rgba(73,225,200,.14); color:#aef5eb; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700; margin-bottom:10px; }
-  </style></head>
+
+    /* === Creative Media Team extras === */
+    .taglist { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
+    .tag { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; font-size:12px }
+    .cta {
+      display:inline-flex; align-items:center; gap:8px; margin-top:12px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      color:#0b1020; font-weight:900; padding:12px 16px; border-radius:12px; border:0; cursor:pointer
+    }
+    .cta:hover { filter:brightness(1.05) }
+    .role-grid { display:grid; gap:14px; grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 900px) { .role-grid { grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 560px) { .role-grid { grid-template-columns: 1fr; } }
+    .role-card {
+      background: var(--card); border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius); padding: 18px; transition: transform .2s ease, border-color .2s ease;
+    }
+    .role-card:hover { transform: translateY(-3px); border-color: rgba(73,225,200,.35); }
+  </style>
+</head>
 <body>
   <header>
     <div class="nav">
@@ -176,7 +197,9 @@
         <img id="moheLogo" src="assets/3.png" alt="شعار وزارة التعليم العالي والبحث العلمي" title="وزارة التعليم العالي" />
       </div>
     </div>
-  </header>  <main>
+  </header>
+
+  <main>
     <!-- Hero -->
     <section class="hero">
       <div>
@@ -204,82 +227,167 @@
             <h3>فرص وفعاليات</h3>
             <p>إعلانات عن برامج تدريب، ندوات، وشراكات.</p>
           </div>
+          <div class="card">
+            <div class="icon">🧠</div>
+            <h3>Creative Media Team</h3>
+            <p>لو إبداعك في الديزاين/المونتاج/السوشيال — مكانك معانا.</p>
+          </div>
         </div>
-      </div><div class="hero-card" data-aos="fade-left">
-    <div class="glow" aria-hidden="true"></div>
-    <!-- ضع صورة الروبوت/البانر هنا -->
-    <img id="robotImage" src="assets/5.png" alt="Momenta Robot" />
-  </div>
-</section>
+      </div>
+      <div class="hero-card" data-aos="fade-left">
+        <div class="glow" aria-hidden="true"></div>
+        <!-- ضع صورة الروبوت/البانر هنا -->
+        <img id="robotImage" src="assets/5.png" alt="Momenta Robot" />
+      </div>
+    </section>
 
-<!-- Form Section -->
-<section class="section">
-  <h2 data-aos="fade-up">سجّل بياناتك</h2>
-  <div class="form-wrap">
-    <form id="signupForm" novalidate data-aos="fade-up" data-aos-delay="60">
-      <div class="field">
-        <label for="fullName">الاسم الثلاثي بالعربية <span style="color:#8fb3ff">*</span></label>
-        <input id="fullName" name="fullName" type="text" placeholder="مثال: أحمد محمد علي" required inputmode="text" autocomplete="name" aria-invalid="false"
-               minlength="7" />
-        <div class="hint">يجب أن يتكوّن من 3 كلمات عربية على الأقل.</div>
-        <div class="error" id="nameError">فضلاً اكتب اسمك ثلاثي بالعربية.</div>
+    <!-- Creative Media Team Section -->
+    <section class="section" id="creative">
+      <span class="badge" data-aos="zoom-in">فرصة تطوّع</span>
+      <h2 data-aos="fade-up">✨ انضم لفريق الـ Creative Media Team ✨</h2>
+      <p class="sub" data-aos="fade-up" data-aos-delay="60">
+        لو عندك موهبة في التصميم أو المونتاج أو السوشيال ميديا، وعايز توري شغلك للكل… مكانك معانا!
+        أسرة <strong>Momenta</strong> بتكوّن فريق <strong>Creative Media Team</strong> المسؤول عن:
+      </p>
+
+      <div class="role-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="role-card">
+          <div class="icon">🎨</div>
+          <h3>تصميم الجرافيك</h3>
+          <p>تصميم بوسترات رسمية، هويات فرعية، قوالب سوشيال.</p>
+          <div class="taglist"><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">Figma</span></div>
+        </div>
+        <div class="role-card">
+          <div class="icon">🎥</div>
+          <h3>فيديو ومونتاج</h3>
+          <p>فيديوهات دعائية، ريلز، موشن بسيط.</p>
+          <div class="taglist"><span class="tag">Premiere</span><span class="tag">CapCut</span><span class="tag">After Effects</span></div>
+        </div>
+        <div class="role-card">
+          <div class="icon">📸</div>
+          <h3>تصوير وتغطية</h3>
+          <p>توثيق فعاليات الأسرة صورًا وفيديو.</p>
+          <div class="taglist"><span class="tag">Photography</span><span class="tag">Lighting</span><span class="tag">Color</span></div>
+        </div>
+        <div class="role-card">
+          <div class="icon">🌐</div>
+          <h3>إدارة السوشيال</h3>
+          <p>كتابة المحتوى، الجداول، الـ Insights.</p>
+          <div class="taglist"><span class="tag">Content</span><span class="tag">Scheduling</span><span class="tag">Analytics</span></div>
+        </div>
       </div>
 
-      <div class="field">
-        <label for="level">الفرقة الدراسية <span style="color:#8fb3ff">*</span></label>
-        <select id="level" name="level" required aria-invalid="false">
-          <option value="" selected disabled>اختر الفرقة</option>
-          <option value="Preparatory">الفرقة الإعدادية</option>
-          <option value="First">الأولى</option>
-          <option value="Second">الثانية</option>
-          <option value="Third">الثالثة</option>
-          <option value="Fourth">الرابعة</option>
-        </select>
-        <div class="error" id="levelError">فضلاً اختر الفرقة الدراسية.</div>
+      <button class="cta" id="ctaCreative" data-aos="fade-up" data-aos-delay="140">📝 قدّم لفريق Creative Media Team</button>
+    </section>
+
+    <!-- Form Section -->
+    <section class="section">
+      <h2 data-aos="fade-up">سجّل بياناتك</h2>
+      <div class="form-wrap">
+        <form id="signupForm" novalidate data-aos="fade-up" data-aos-delay="60">
+          <div class="field">
+            <label for="fullName">الاسم الثلاثي بالعربية <span style="color:#8fb3ff">*</span></label>
+            <input id="fullName" name="fullName" type="text" placeholder="مثال: أحمد محمد علي" required inputmode="text" autocomplete="name" aria-invalid="false" minlength="7" />
+            <div class="hint">يجب أن يتكوّن من 3 كلمات عربية على الأقل.</div>
+            <div class="error" id="nameError">فضلاً اكتب اسمك ثلاثي بالعربية.</div>
+          </div>
+
+          <div class="field">
+            <label for="level">الفرقة الدراسية <span style="color:#8fb3ff">*</span></label>
+            <select id="level" name="level" required aria-invalid="false">
+              <option value="" selected disabled>اختر الفرقة</option>
+              <option value="Preparatory">الفرقة الإعدادية</option>
+              <option value="First">الأولى</option>
+              <option value="Second">الثانية</option>
+              <option value="Third">الثالثة</option>
+              <option value="Fourth">الرابعة</option>
+            </select>
+            <div class="error" id="levelError">فضلاً اختر الفرقة الدراسية.</div>
+          </div>
+
+          <div class="field">
+            <label for="nationalId">الرقم القومي (14 رقم) <span style="color:#8fb3ff">*</span></label>
+            <input id="nationalId" name="nationalId" type="text" inputmode="numeric" pattern="^\d{14}$" maxlength="14" minlength="14" required aria-invalid="false" placeholder="مثال: 29811151234567" />
+            <div class="hint">تأكد من كتابة 14 رقماً بدون فواصل.</div>
+            <div class="error" id="nidError">الرقم القومي يجب أن يكون 14 رقماً.</div>
+          </div>
+
+          <div class="field">
+            <label for="phone">رقم الموبايل (11 رقم) <span style="color:#8fb3ff">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" pattern="^01[0-2,5]\\d{8}$" maxlength="11" minlength="11" required aria-invalid="false" placeholder="مثال: 01012345678" />
+            <div class="hint">يبدأ بـ 010 أو 011 أو 012 أو 015 ويتكون من 11 رقماً.</div>
+            <div class="error" id="phoneError">رقم الموبايل غير صحيح.</div>
+          </div>
+
+          <!-- اختيار الفريق + أخرى -->
+          <div class="field">
+            <label for="interest">الفريق الذي ترغب بالانضمام إليه (اختياري)</label>
+            <select id="interest" name="interest" aria-invalid="false">
+              <option value="" selected>— عضوية عامة —</option>
+              <option value="Creative Media Team">Creative Media Team (عام)</option>
+              <option value="Graphic Design">Creative Media — Graphic Design</option>
+              <option value="Video Editing">Creative Media — Video Editing</option>
+              <option value="Photography">Creative Media — Photography</option>
+              <option value="Social Media">Creative Media — Social Media</option>
+              <option value="Motion Graphics">Creative Media — Motion Graphics</option>
+              <option value="Content Writing">Creative Media — Content Writing</option>
+              <option value="other">أخرى</option>
+            </select>
+            <div class="hint">اختيارك يساعدنا نوصل فريق الكرياتيف بيك أسرع.</div>
+
+            <!-- يظهر فقط لو اختار "أخرى" -->
+            <div id="otherInterestWrap" class="field" style="display:none; margin-top:10px">
+              <label for="otherInterest">اذكر مهارتك أو الدور في مجال الميديا</label>
+              <input id="otherInterest" name="otherInterest" type="text" inputmode="text" placeholder="مثال: Podcast Editing / UI Motion / 3D / Voice Over" />
+              <div class="hint">اكتب مهارة محددة علشان نعرف نسبّتك للفريق المناسب.</div>
+              <div class="error" id="otherError">من فضلك اكتب مهارتك في خانة "أخرى".</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="portfolio">روابط أعمالك/بورتفوليو (اختياري)</label>
+            <input id="portfolio" name="portfolio" type="text" inputmode="url" placeholder="مثال: behance.net/username أو رابط Google Drive" />
+            <div class="hint">لو ماعندكش بورتفوليو حالياً ممكن تسيبها فاضية.</div>
+          </div>
+
+          <div class="actions">
+            <button id="submitBtn" type="submit">
+              <span class="btnText">إرسال الطلب</span>
+            </button>
+            <span class="note">بالضغط على "إرسال" فأنت توافق على استخدام بياناتك لأغراض نشاط الأسرة داخل المعهد.</span>
+          </div>
+        </form>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="120">
+          <h3 style="margin-top:0">لماذا ننصحك بالتسجيل الآن؟</h3>
+          <p>حتى تصلك أولاً بأول الدعوات لورش العمل والندوات والمسابقات، وتقدر تشارك في الفرق والمشروعات الطلابية وتبني بورتفوليو قوي.</p>
+          <ul style="margin:10px 0 0 18px; color:var(--muted);">
+            <li>أولوية الحضور للأعضاء المسجلين.</li>
+            <li>شهادات مشاركة لمناسبات مختارة.</li>
+            <li>مجتمع يساندك ويحفّزك.</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="field">
-        <label for="nationalId">الرقم القومي (14 رقم) <span style="color:#8fb3ff">*</span></label>
-        <input id="nationalId" name="nationalId" type="text" inputmode="numeric" pattern="^\d{14}$" maxlength="14" minlength="14" required aria-invalid="false" placeholder="مثال: 29811151234567" />
-        <div class="hint">تأكد من كتابة 14 رقماً بدون فواصل.</div>
-        <div class="error" id="nidError">الرقم القومي يجب أن يكون 14 رقماً.</div>
-      </div>
+  </main>
 
-      <div class="field">
-        <label for="phone">رقم الموبايل (11 رقم) <span style="color:#8fb3ff">*</span></label>
-        <input id="phone" name="phone" type="tel" inputmode="tel" pattern="^01[0-2,5]\\d{8}$" maxlength="11" minlength="11" required aria-invalid="false" placeholder="مثال: 01012345678" />
-        <div class="hint">يبدأ بـ 010 أو 011 أو 012 أو 015 ويتكون من 11 رقماً.</div>
-        <div class="error" id="phoneError">رقم الموبايل غير صحيح.</div>
-      </div>
-
-      <div class="actions">
-        <button id="submitBtn" type="submit">
-          <span class="btnText">إرسال الطلب</span>
-        </button>
-        <span class="note">بالضغط على "إرسال" فأنت توافق على استخدام بياناتك لأغراض نشاط الأسرة داخل المعهد.</span>
-      </div>
-    </form>
-
-    <div class="card" data-aos="fade-up" data-aos-delay="120">
-      <h3 style="margin-top:0">لماذا ننصحك بالتسجيل الآن؟</h3>
-      <p>حتى تصلك أولاً بأول الدعوات لورش العمل والندوات والمسابقات، وتقدر تشارك في الفرق والمشروعات الطلابية وتبني بورتفوليو قوي.</p>
-      <ul style="margin:10px 0 0 18px; color:var(--muted);">
-        <li>أولوية الحضور للأعضاء المسجلين.</li>
-        <li>شهادات مشاركة لمناسبات مختارة.</li>
-        <li>مجتمع يساندك ويحفّزك.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-  </main>  <div id="toast" class="toast" role="status" aria-live="polite">
+  <div id="toast" class="toast" role="status" aria-live="polite">
     <div class="inner" id="toastInner">تم الإرسال بنجاح ✅</div>
-  </div>  <footer>
+  </div>
+
+  <footer>
     © <span id="year"></span> أسرة Momenta — المعهد العالي للهندسة والتكنولوجيا بكفر الشيخ. جميع الحقوق محفوظة.
-  </footer>  <!-- AOS -->  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
     AOS.init({ once: true, duration: 640, easing: 'ease-out-cubic' });
-  </script>  <script>
-    // === 1) إعداد رابط تطبيق Google Apps Script (استبدل القيمة) ===
+  </script>
+
+  <script>
+    // === 1) إعداد رابط تطبيق Google Apps Script (استبدل القيمة عند الحاجة) ===
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQsHreGQ2frjG14SP4QcPcq3gyqyvNx7w-XLexMEE1xDIJupQugUL8jaJrC25H5uA/exec';
 
     // === 2) عناصر مساعدة ===
@@ -288,16 +396,22 @@
     const btnText = submitBtn.querySelector('.btnText');
     const toast = document.getElementById('toast');
     const toastInner = document.getElementById('toastInner');
+    const ctaCreative = document.getElementById('ctaCreative');
 
     // سنة الفوتر
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // دالة قراءة باراميتر من الرابط
+    function getParam(key) {
+      const u = new URL(location.href);
+      return u.searchParams.get(key);
+    }
 
     // تحقق مخصص للاسم العربي ثلاثي
     function isArabicThreeWords(value) {
       const cleaned = (value || '').trim().replace(/\s+/g, ' ');
       const parts = cleaned.split(' ');
       if (parts.length < 3) return false;
-      // قبول الحروف العربية وعلامة المد والمسافات
       const ar = /^[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]+$/;
       return parts.slice(0,3).every(p => ar.test(p));
     }
@@ -319,7 +433,6 @@
     }
 
     async function submitData(payload) {
-      // نستخدم application/x-www-form-urlencoded لتقليل مشاكل CORS
       const body = new URLSearchParams(payload);
       try {
         const res = await fetch(SCRIPT_URL, {
@@ -327,13 +440,48 @@
           headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
           body,
         });
-        // بعض إعدادات GAS قد تعيد استجابة opaque، نتعامل معها كنجاح طالما لم تُرمَ خطأ
         if (res.type === 'opaque') return { ok: true };
         const data = await res.json().catch(() => ({ ok: true }));
         return data;
       } catch (err) {
         return { ok: false, error: err.message };
       }
+    }
+
+    // إظهار/إخفاء خانة "أخرى" حسب الاختيار
+    const interestSel = document.getElementById('interest');
+    const otherWrap = document.getElementById('otherInterestWrap');
+    const otherInput = document.getElementById('otherInterest');
+
+    function toggleOther() {
+      if (!interestSel) return;
+      const isOther = interestSel.value === 'other';
+      otherWrap.style.display = isOther ? 'block' : 'none';
+      if (isOther) {
+        otherInput.setAttribute('required', 'required');
+        otherInput.focus();
+      } else {
+        otherInput.removeAttribute('required');
+        showError('otherError', false);
+      }
+    }
+    interestSel?.addEventListener('change', toggleOther);
+
+    // CTA: تعبئة اختيار الكرياتيف والتمرير للفورم
+    if (ctaCreative) {
+      ctaCreative.addEventListener('click', () => {
+        if (interestSel) interestSel.value = 'Creative Media Team';
+        toggleOther();
+        document.getElementById('fullName')?.focus();
+        form?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // تمييز اختيار الكرياتيف من اللينك ?team=creative
+    const teamParam = (getParam('team') || '').toLowerCase();
+    if (teamParam === 'creative' || teamParam === 'creative-media' || teamParam === 'creative-media-team') {
+      if (interestSel) interestSel.value = 'Creative Media Team';
+      toggleOther();
     }
 
     form.addEventListener('submit', async (e) => {
@@ -349,6 +497,7 @@
       showError('levelError', false);
       showError('nidError', false);
       showError('phoneError', false);
+      showError('otherError', false);
 
       setInvalid(fullName, false);
       setInvalid(level, false);
@@ -362,6 +511,13 @@
       if (!/^\d{14}$/.test(nationalId.value)) { showError('nidError', true); setInvalid(nationalId, true); valid = false; }
       if (!/^01[0-2,5]\d{8}$/.test(phone.value)) { showError('phoneError', true); setInvalid(phone, true); valid = false; }
 
+      // تحقق من خانة "أخرى"
+      const isOther = interestSel && interestSel.value === 'other';
+      if (isOther && !otherInput.value.trim()) {
+        showError('otherError', true);
+        valid = false;
+      }
+
       if (!valid) { showToast('تأكد من صحة الحقول المظللة باللون الأحمر', true); return; }
 
       // تعطيل الزر أثناء الإرسال
@@ -373,6 +529,9 @@
         level: level.value,
         nationalId: nationalId.value.trim(),
         phone: phone.value.trim(),
+        interest: (interestSel?.value || '').trim(),
+        otherInterest: (otherInput?.value || '').trim(),
+        portfolio: (document.getElementById('portfolio')?.value || '').trim(),
         ua: navigator.userAgent,
         ref: document.referrer || location.href,
       };
@@ -381,6 +540,7 @@
 
       if (result && result.ok) {
         form.reset();
+        toggleOther();
         showToast('تم استلام طلبك بنجاح! سنوافيك بالتفاصيل قريبًا ✅');
       } else {
         showToast('تعذر الإرسال حالياً. حاول مرة أخرى لاحقًا.', true);
@@ -390,5 +550,5 @@
       btnText.textContent = 'إرسال الطلب';
     });
   </script>
-  </body>
+</body>
 </html>
