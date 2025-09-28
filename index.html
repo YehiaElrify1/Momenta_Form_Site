@@ -90,10 +90,27 @@
     @keyframes floatGlow { from { transform: translateY(-8px);} to { transform: translateY(8px);} }
 
     /* Section */
-
-    .section { position: relative; padding: 28px 18px 38px; }
-    .section::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: min(1100px, calc(100% - 36px)); transform: translateX(-50%); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); z-index: -1; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+    .section { 
+      position: relative;          /* علشان الخلفية pseudo-element تتحكم جوه */
+      z-index: 0;                  /* يخلي ::before يفضل ورا المحتوى بس */
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 28px 18px 38px; 
+      border-radius: var(--radius);
+      overflow: hidden;            /* يخلي الخلفية تتقصّ مع الانحناءات */
+    }
     
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 0;                    /* ياخد نفس عرض وارتفاع السكشن */
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: inherit;      /* يخلي الحواف زي حواف السكشن */
+      z-index: -1;                 /* يفضل خلف النصوص */
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+
     .section h2 { margin: 0 0 18px; font-size: 22px; }
 
     /* Feature cards */
