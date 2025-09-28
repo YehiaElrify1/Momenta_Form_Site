@@ -112,6 +112,10 @@
       box-shadow: 0 10px 30px rgba(0,0,0,.18);
     }
 
+    .section:first-of-type {
+      margin-top: 80px;
+    }
+
     .section h2 { margin: 0 0 18px; font-size: 22px; }
 
     /* Feature cards */
@@ -304,12 +308,12 @@
             <label for="interest">الفريق الذي ترغب بالانضمام إليه (اختياري)</label>
             <select id="interest" name="interest" aria-invalid="false">
               <option value="" disabled selected>— اختر الفريق —</option>
-              <option value="Graphic Design">Creative Media — Graphic Design</option>
-              <option value="Video Editing">Creative Media — Video Editing</option>
-              <option value="Photography">Creative Media — Photography</option>
-              <option value="Social Media">Creative Media — Social Media</option>
-              <option value="Motion Graphics">Creative Media — Motion Graphics</option>
-              <option value="Content Writing">Creative Media — Content Writing</option>
+              <option value="Graphic Design">Graphic Design</option>
+              <option value="Video Editing">Video Editing</option>
+              <option value="Photography">Photography</option>
+              <option value="Social Media">Social Media</option>
+              <option value="Motion Graphics">Motion Graphics</option>
+              <option value="Content Writing">Content Writing</option>
               <option value="other">أخرى</option>
             </select>
             <div class="error" id="interestError">فضلاً اختر فريق محدد.</div>
@@ -319,7 +323,7 @@
             <div id="otherInterestWrap" class="field" style="display:none; margin-top:10px">
               <label for="otherInterest">اذكر مهارتك أو الدور في مجال الميديا</label>
               <input id="otherInterest" name="otherInterest" type="text" inputmode="text" placeholder="مثال: Podcast Editing / UI Motion / 3D / Voice Over" />
-              <div class="hint">اكتب مهارة محددة علشان نعرف نسبّتك للفريق المناسب.</div>
+              <div class="hint">اكتب مهارة محددة علشان نحدد لك الفريق المناسب.</div>
               <div class="error" id="otherError">من فضلك اكتب مهارتك في خانة "أخرى".</div>
             </div>
           </div>
